@@ -1,0 +1,68 @@
+<h1>Buchformular</h1>
+<form class="ui large form" [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <div class="field">
+    <label>Buchtitel</label>
+    <input name="title" formControlName="title" />
+    <div *ngIf="errors['title']" class="ui negative message">
+      {{ errors["title"] }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Autor</label>
+    <input name="author" formControlName="author" />
+    <div *ngIf="errors['author']" class="ui negative message">
+      {{ errors["author"] }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Erscheinungsdatum</label>
+    <input name="year" formControlName="year" />
+    <div *ngIf="errors['year']" class="ui negative message">
+      {{ errors["year"] }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Verlag</label>
+    <input name="publisher" formControlName="publisher" />
+    <div *ngIf="errors['publisher']" class="ui negative message">
+      {{ errors["publisher"] }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Preis</label>
+    <input name="price" formControlName="price" />
+    <div *ngIf="errors['price']" class="ui negative message">
+      {{ errors["price"] }}
+    </div>
+  </div>
+  <div class="field">
+    <label>ISBN</label>
+    <input name="isbn" formControlName="isbn" />
+    <div *ngIf="errors['isbn']" class="ui negative message">
+      {{ errors["isbn"] }}
+    </div>
+  </div>
+  <div class="field">
+    <label>Beschreibung</label>
+    <textarea
+      name="description"
+      formControlName="description"
+      rows="3"
+    ></textarea>
+  </div>
+  <div class="field">
+    <label>Bildquelle</label>
+    <input required />
+    <div *ngIf="errors['picture']" class="ui negative message">
+      {{ errors["picture"] }}
+    </div>
+  </div>
+
+  <button type="submit" class="ui button" [disabled]="myForm.invalid">
+    Speichern
+  </button>
+</form>

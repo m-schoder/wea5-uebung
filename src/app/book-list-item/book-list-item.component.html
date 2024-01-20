@@ -1,0 +1,6 @@
+<img class="ui tiny image" *ngIf="book.picture" [src]="imageUrl()" />
+<div class="content">
+  <div class="header">{{ book.title }}</div>
+  <div class="description">{{ book.author }}</div>
+  <div class="extra">Year {{ book.year }}</div>
+</div>
